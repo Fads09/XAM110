@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>__ANDROID__;TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-iPhone|AnyCPU' ">
+    <IntermediateOutputPath>obj\Debug\netstandard2.0</IntermediateOutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <DefineConstants>__IOS__;TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+</Project>
